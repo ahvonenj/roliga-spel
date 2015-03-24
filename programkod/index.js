@@ -128,6 +128,12 @@ function nyckelHanterar(e) // Key press handling function
 				
 				textHastighet += 0.05; // Increase text move speed
 				textIntervall -= 50; // Increase text spawn speed
+				
+				var sound = document.getElementById('explosion_sound').cloneNode(true);
+				sound.play();
+				setInterval(function() {
+					sound.parentNode.removeChild(sound);
+				}, 2000);
 			}
 			
 			poang += 10;
